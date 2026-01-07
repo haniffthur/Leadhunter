@@ -1,0 +1,6 @@
+Django>=5.0
+django-jazzmin
+django-import-export
+xhtml2pdf
+requests
+google-generativeai

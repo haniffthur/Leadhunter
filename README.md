@@ -20,12 +20,22 @@ Aplikasi ini menggabungkan **Google Maps (via Serper)** untuk mencari data, dan 
 
 Ikuti langkah-langkah ini di terminal (Command Prompt / PowerShell / Terminal VS Code).
 
-2. Untuk Mac / Linux:
+2. Bikin Virtual Environment (Wajib)
+Biar library tidak bentrok, kita bikin ruang isolasi dulu.
+
+Untuk Windows:
+
+Bash
+
+python -m venv env
+env\Scripts\activate
+Untuk Mac / Linux:
 
 Bash
 
 python3 -m venv env
 source env/bin/activate
+(Tanda berhasil: Ada tulisan (env) di sebelah kiri terminal kamu)
 
 
 3. Install Library

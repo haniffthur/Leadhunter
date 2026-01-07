@@ -1,0 +1,31 @@
+{% extends "admin/change_list.html" %} 
+{% load static %}
+
+{% block content %}
+
+<div class="col-12" style="margin-bottom: 20px;">
+    <div class="card" style="box-shadow: 0 0 1px rgba(0,0,0,.125), 0 1px 3px rgba(0,0,0,.2); border-radius: 0.25rem; background-color: #fff; border-left: 5px solid #007bff;">
+        <div class="card-header" style="background-color: transparent; border-bottom: 1px solid rgba(0,0,0,.125); padding: 0.75rem 1.25rem;">
+            <h3 class="card-title" style="margin: 0; font-size: 1.1rem; font-weight: 400;">🤖 Robot Hunter</h3>
+        </div>
+        <div class="card-body" style="padding: 1.25rem;">
+            <p class="text-muted">Ketik kata kunci bisnis yang mau dicari (Contoh: <b>Coffee Shop di Tebet</b>)</p>
+            
+            <form action="{% url 'hunt_leads' %}" method="POST">
+                {% csrf_token %}
+                <div class="input-group" style="display: flex; gap: 10px;">
+                    <input type="text" name="keyword" class="form-control" placeholder="Masukan Keyword..." style="flex: 1; padding: 0.375rem 0.75rem; border: 1px solid #ced4da; border-radius: 0.25rem;" required>
+                    <span class="input-group-append">
+                        <button type="submit" class="btn btn-dark" style="background-color: #343a40; border-color: #343a40; color: #fff; padding: 0.375rem 0.75rem; border-radius: 0.25rem; cursor: pointer;" onclick="alert('Robot sedang bekerja... Tunggu ya!')">
+                            🚀 Start Hunting
+                        </button>
+                    </span>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+{{ block.super }}
+
+{% endblock %}

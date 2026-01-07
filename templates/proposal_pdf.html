@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Proposal Penawaran</title>
+    <style>
+        @page {
+            size: A4; /* Ukuran Kertas */
+            margin: 2.5cm; /* Margin Kiri-Kanan-Atas-Bawah */
+        }
+        body {
+            font-family: Helvetica, sans-serif; /* Font standar PDF */
+            color: #333;
+            line-height: 1.6;
+            font-size: 12pt;
+        }
+        .header {
+            border-bottom: 3px solid #2c3e50;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .agency-name {
+            font-size: 24px;
+            font-weight: bold;
+            color: #2c3e50;
+            text-transform: uppercase;
+        }
+        .client-box {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 30px;
+            border-left: 5px solid #e74c3c;
+        }
+        .highlight {
+            color: #e74c3c;
+            font-weight: bold;
+        }
+        .price-tag {
+            font-size: 20px;
+            font-weight: bold;
+            color: #27ae60;
+        }
+        .signature {
+            margin-top: 50px;
+        }
+        .footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            text-align: center;
+            font-size: 10px;
+            color: #95a5a6;
+            border-top: 1px solid #eee;
+            padding-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <div class="agency-name">{{ my_agency }}</div>
+        <div style="font-size: 10pt; color: #7f8c8d;">Digital Solutions Partner</div>
+    </div>
+
+    <p>Kepada Yth,<br>
+    <strong>Owner / Manager {{ lead.name }}</strong><br>
+    {% if lead.address %}{{ lead.address }}{% else %}di Tempat{% endif %}</p>
+
+    <br>
+
+    <p>Halo,</p>
+    
+    <p>Kami dari <strong>{{ my_agency }}</strong> telah melakukan analisa digital terhadap bisnis Anda, 
+    <span class="highlight">{{ lead.name }}</span>.</p>
+
+    {% if lead.has_website %}
+        <p>Kami melihat Anda sudah memiliki website. Namun, berdasarkan analisa teknis kami (menggunakan teknologi <em>{{ lead.tech_stack|default:"Standar" }}</em>), performa website tersebut masih bisa ditingkatkan untuk mendatangkan lebih banyak pelanggan lewat Google.</p>
+        <p>Kami menawarkan jasa <strong>Redesign & Optimasi SEO</strong> agar website Anda tampil lebih modern dan mudah ditemukan.</p>
+    {% else %}
+        <p>Di era digital ini, kami tidak menemukan website resmi untuk bisnis Anda. Padahal, ribuan orang mencari jasa/produk di kategori <em>{{ lead.category }}</em> setiap harinya di Google.</p>
+        <p>Kami ingin membantu membuatkan <strong>Website Profesional</strong> khusus untuk {{ lead.name }} agar omzet Anda meningkat drastis.</p>
+    {% endif %}
+
+    <div class="client-box">
+        <h3 style="margin-top:0;">Penawaran Spesial</h3>
+        <p>Paket Digital Booster untuk {{ lead.name }}:</p>
+        <ul>
+            <li>Desain Website Premium (Mobile Friendly)</li>
+            <li>Gratis Hosting & Domain 1 Tahun</li>
+            <li>Optimasi SEO Dasar (Google)</li>
+            <li>Integrasi Tombol WhatsApp</li>
+        </ul>
+        <p>Investasi: <span class="price-tag">{{ price }}</span></p>
+    </div>
+
+    <p>Kami siap berdiskusi lebih lanjut untuk menyesuaikan kebutuhan Anda.</p>
+
+    <div class="signature">
+        <p>Hormat Kami,</p>
+        <br><br><br>
+        <p><strong>Hanif (CEO)</strong><br>
+        {{ my_agency }}<br>
+        WhatsApp: 0812-3456-7890</p>
+    </div>
+
+    <div class="footer">
+        Dokumen ini dibuat otomatis oleh sistem cerdas {{ my_agency }} pada {% now "d F Y" %}
+    </div>
+
+</body>
+</html>

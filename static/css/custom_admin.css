@@ -1,0 +1,85 @@
+/* 1. IMPORT FONT KEREN (Poppins) */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* 2. TERAPKAN FONT KE SEMUA ELEMEN */
+body, h1, h2, h3, h4, p, a, span, div, table {
+    font-family: 'Poppins', sans-serif !important;
+}
+
+/* 3. BIKIN KARTU LEBIH MODERN (Rounded & Shadow) */
+.card, .small-box {
+    border-radius: 15px !important;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05) !important;
+    border: none !important;
+    transition: transform 0.2s;
+}
+
+/* Efek melayang pas diklik/hover */
+.card:hover, .small-box:hover {
+    transform: translateY(-5px);
+}
+
+/* 4. TOMBOL LEBIH BULAT & GRADASI */
+.btn {
+    border-radius: 50px !important; /* Pill shape */
+    padding: 8px 20px !important;
+    font-weight: 500;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+/* Tombol Primary (Biru) jadi Gradasi */
+.btn-primary {
+    background: linear-gradient(45deg, #3498db, #2980b9) !important;
+    border: none !important;
+}
+
+/* Tombol PDF (Merah) */
+a[href*="proposal"] {
+    background: linear-gradient(45deg, #e74c3c, #c0392b) !important;
+    box-shadow: 0 4px 10px rgba(231, 76, 60, 0.3) !important;
+}
+
+/* 5. TABEL LEBIH BERSIH */
+table.table {
+    border-collapse: separate; 
+    border-spacing: 0 10px; /* Jarak antar baris */
+}
+
+/* Baris tabel jadi kayak kartu panjang */
+table.table tbody tr {
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+}
+
+table.table td {
+    border-top: none !important;
+    vertical-align: middle !important;
+    padding: 15px !important;
+}
+
+/* Header Tabel */
+table.table thead th {
+    border-bottom: none !important;
+    color: #95a5a6;
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+
+/* 6. INPUT FIELD (Pencarian Robot dll) */
+input[type="text"], select {
+    border-radius: 10px !important;
+    border: 1px solid #eee !important;
+    padding: 12px !important;
+    background-color: #f8f9fa !important;
+}
+
+input[type="text"]:focus {
+    background-color: #fff !important;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1) !important;
+}
+
+/* 7. ROBOT HUNTER SPESIAL */
+.card-primary.card-outline {
+    border-top: 5px solid #202429 !important;
+}
